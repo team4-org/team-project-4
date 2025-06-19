@@ -35,4 +35,22 @@ class TicTacToe:
         if self.board[2] == self.board[4] == self.board[6] == player:
             return True
         return False
-    
+        
+        def check_draw(self):
+        """Проверяет, есть ли ничья."""
+        return " " not in self.board
+
+    def button_click(self, index):
+        """Обрабатывает нажатие кнопки."""
+        if self.board[index] == " ":
+            self.board[index] = self.current_player
+            self.buttons[index].config(text=self.current_player)
+
+            if self.check_win(self.current_player):
+                messagebox.showinfo("Игра окончена", f"Игрок {self.current_player} победил!")
+                self.reset_game()
+            elif self.check_draw():
+                messagebox.showinfo("Игра окончена", "Ничья!")
+                self.reset_game()
+            else:
+                self.current_player = "O" if self.current_player == "X" else "X"
