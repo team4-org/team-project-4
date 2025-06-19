@@ -23,7 +23,6 @@ class TicTacToe:
             self.buttons.append(button)
 
     def check_win(self, player):
-        """Проверяет, выиграл ли игрок."""
         for i in range(3):
             if self.board[i*3] == self.board[i*3 + 1] == self.board[i*3 + 2] == player:
                 return True
@@ -37,11 +36,9 @@ class TicTacToe:
         return False
 
     def check_draw(self):
-        """Проверяет, есть ли ничья."""
         return " " not in self.board
 
     def button_click(self, index):
-        """Обрабатывает нажатие кнопки."""
         if self.board[index] == " ":
             self.board[index] = self.current_player
             self.buttons[index].config(text=self.current_player)
@@ -56,7 +53,6 @@ class TicTacToe:
                 self.current_player = "O" if self.current_player == "X" else "X"
 
     def reset_game(self):
-        """Сбрасывает игру."""
         self.board = [" "] * 9
         self.current_player = "X"
         for button in self.buttons:
