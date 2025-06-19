@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 class TicTacToe:
-    def init(self, master):
+    def __init__(self, master):
         self.master = master
         master.title("Крестики-нолики")
         self.board = [" "] * 9
@@ -35,7 +35,8 @@ class TicTacToe:
 
     def check_draw(self):
         return " " not in self.board
-def button_click(self, index):
+
+    def button_click(self, index):
         if self.board[index] == " ":
             self.board[index] = self.current_player
             self.buttons[index].config(text=self.current_player)
@@ -47,7 +48,8 @@ def button_click(self, index):
                 self.reset_game()
             else:
                 self.current_player = "O" if self.current_player == "X" else "X"
-def reset_game(self):
+
+    def reset_game(self):
         self.board = [" "] * 9
         self.current_player = "X"
         for button in self.buttons:
