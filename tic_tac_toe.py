@@ -47,3 +47,13 @@ def button_click(self, index):
                 self.reset_game()
             else:
                 self.current_player = "O" if self.current_player == "X" else "X"
+def reset_game(self):
+        self.board = [" "] * 9
+        self.current_player = "X"
+        for button in self.buttons:
+            button.config(text=" ")
+
+if name == "__main__":
+    root = tk.Tk()
+    game = TicTacToe(root)
+    root.mainloop()
