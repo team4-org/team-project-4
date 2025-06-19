@@ -53,7 +53,7 @@ def reset_game(self):
         for button in self.buttons:
             button.config(text=" ")
 
-if name == "__main__":
+if __name__ == "__main__":
     root = tk.Tk()
     game = TicTacToe(root)
     root.mainloop()
